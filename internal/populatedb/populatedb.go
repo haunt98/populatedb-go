@@ -45,7 +45,7 @@ func NewPopulator(
 	dryRun bool,
 ) (Populator, error) {
 	if dbDialect != dialectMySQL {
-		return nil, fmt.Errorf("not support [%s]: %w", dbDialect, ErrNotSupportDialect)
+		return nil, fmt.Errorf("not support dialect [%s]: %w", dbDialect, ErrNotSupportDialect)
 	}
 
 	// https://go.dev/doc/tutorial/database-access

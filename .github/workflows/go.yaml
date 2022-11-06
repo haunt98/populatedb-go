@@ -19,7 +19,7 @@ jobs:
           go-version: "1.19"
           check-latest: true
           cache: true
-      - run: go test -race -failfast .
+      - run: go test -race -failfast ./...
   build:
     name: Build
     runs-on: ${{ matrix.os }}

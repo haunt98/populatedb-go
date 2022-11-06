@@ -225,7 +225,7 @@ func (p *populator) prepareInsert(tableName string) ([]string, []string, []func(
 	questionMarks := make([]string, 0, len(table.Columns))
 	argFns := make([]func() any, 0, len(table.Columns))
 	for _, column := range table.Columns {
-		dt, err := ParseDatabaseType(column.Type)
+		dt, err := ParseDatabaseType(column)
 		if err != nil {
 			return nil, nil, nil, fmt.Errorf("failed to parse database type [%s]: %w", column.Type, err)
 		}

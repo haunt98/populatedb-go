@@ -3,6 +3,7 @@ module github.com/haunt98/populatedb-go
 go 1.18
 
 require (
+	github.com/brianvoe/gofakeit/v6 v6.19.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/k1LoW/tbls v1.56.6
 	github.com/make-go-great/color-go v0.4.1

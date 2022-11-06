@@ -20,6 +20,9 @@ const (
 	flagURLName  = "url"
 	flagURLUsage = "database url"
 
+	flagTableName  = "table"
+	flagTableUsage = "table name to generate data"
+
 	flagNumberRecordName  = "number"
 	flagNumberRecordUsage = "number of record to generate"
 
@@ -40,7 +43,52 @@ type App struct {
 }
 
 func NewApp() *App {
-	cliApp := &cli.App{}
+	a := &action{}
+
+	cliApp := &cli.App{
+		Name:  name,
+		Usage: usage,
+		Commands: []*cli.Command{
+			{
+				Name:    commandGenerateName,
+				Aliases: commandGenerateAliases,
+				Usage:   commandGenerateUsage,
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:     flagDialectName,
+						Usage:    flagDialectUsage,
+						Required: true,
+					},
+					&cli.StringFlag{
+						Name:     flagURLName,
+						Usage:    flagURLUsage,
+						Required: true,
+					},
+					&cli.StringFlag{
+						Name:     flagTableName,
+						Usage:    flagTableUsage,
+						Required: true,
+					},
+					&cli.IntFlag{
+						Name:     flagNumberRecordName,
+						Usage:    flagNumberRecordUsage,
+						Required: true,
+					},
+					&cli.BoolFlag{
+						Name:    flagVerboseName,
+						Aliases: flagVerboseAliases,
+						Usage:   flagVerboseUsage,
+					},
+					&cli.BoolFlag{
+						Name:  flagDryRunName,
+						Usage: flagDryRunUsage,
+					},
+				},
+				Action: a.RunGenerate,
+			},
+		},
+		Action: a.RunHelp,
+	}
 
 	return &App{
 		cliApp: cliApp,

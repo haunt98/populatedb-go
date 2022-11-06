@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/haunt98/populatedb-go/internal/cli"
 
 func main() {
-	fmt.Println("Hello, World!")
+	app := cli.NewApp()
+	app.Run()
 }

@@ -147,6 +147,13 @@ func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRec
 		return fmt.Errorf("maximum question marks [%d]: %w", len(questionMarks), ErrMaximumQuestionMarks)
 	}
 
+	// Because the numberRecordLastBatch may less than numberRecordEachBatch
+	// For example
+	// numberRecord := 120
+	// numberRecordEachBatch := 50
+	// numberBatch := 120/50 + 1 = 3
+	// First 2 batches => 50 * 2 = 100
+	// Last batch => 120 - 100 = 20
 	numberBatch := numberRecord/numberRecordEachBatch + 1
 	numberRecordLastBatch := numberRecord - (numberBatch-1)*numberRecordEachBatch
 
@@ -154,6 +161,7 @@ func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRec
 		valuesQuestionMarks := make([]string, 0, tempNumberRecord)
 		argsInsert := make([]any, 0, tempNumberRecord*len(argFns))
 		for i := 0; i < tempNumberRecord; i++ {
+			// (?, ?, ?)
 			valuesQuestionMarks = append(valuesQuestionMarks, fmt.Sprintf("(%s)", strings.Join(questionMarks, ", ")))
 
 			// Generate each time insert for different value

@@ -26,6 +26,9 @@ const (
 	flagNumberRecordName  = "number"
 	flagNumberRecordUsage = "number of record to generate"
 
+	flagBatchModeName  = "batch"
+	flagBatchModeUsage = "batch mode, insert data in batch"
+
 	flagVerboseName  = "verbose"
 	flagVerboseUsage = "show what is going on"
 
@@ -73,6 +76,10 @@ func NewApp() *App {
 						Name:     flagNumberRecordName,
 						Usage:    flagNumberRecordUsage,
 						Required: true,
+					},
+					&cli.BoolFlag{
+						Name:  flagBatchModeName,
+						Usage: flagBatchModeUsage,
 					},
 					&cli.BoolFlag{
 						Name:    flagVerboseName,

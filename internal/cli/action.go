@@ -12,6 +12,7 @@ type action struct {
 		url          string
 		table        string
 		numberRecord int
+		batchMode    bool
 		verbose      bool
 		dryRun       bool
 	}
@@ -26,6 +27,7 @@ func (a *action) getFlags(c *cli.Context) {
 	a.flags.url = c.String(flagURLName)
 	a.flags.table = c.String(flagTableName)
 	a.flags.numberRecord = c.Int(flagNumberRecordName)
+	a.flags.batchMode = c.Bool(flagBatchModeName)
 
 	a.flags.verbose = c.Bool(flagVerboseName)
 	a.flags.dryRun = c.Bool(flagDryRunName)

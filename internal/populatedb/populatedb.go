@@ -32,6 +32,7 @@ var (
 
 type Populator interface {
 	Insert(ctx context.Context, tableName string, numberRecord int) error
+	InsertBatch(ctx context.Context, tableName string, numberRecord int) error
 }
 
 type populator struct {
@@ -103,6 +104,7 @@ func (p *populator) Insert(ctx context.Context, tableName string, numberRecord i
 		return err
 	}
 
+	// INSERT INTO table_name (column1, column2, column3) VALUES (?, ?, ?);
 	queryInsert := fmt.Sprintf(stmtInsert,
 		tableName,
 		strings.Join(columnNames, ", "),
@@ -117,7 +119,7 @@ func (p *populator) Insert(ctx context.Context, tableName string, numberRecord i
 		}
 
 		if p.verbose {
-			fmt.Println(i, queryInsert, args)
+			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", i, queryInsert, len(args))
 		}
 
 		if !p.dryRun {
@@ -130,7 +132,7 @@ func (p *populator) Insert(ctx context.Context, tableName string, numberRecord i
 	return nil
 }
 
-func (p *populator) BatchInsert(ctx context.Context, tableName string, numberRecord int) error {
+func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRecord int) error {
 	columnNames, questionMarks, argFns, err := p.prepareInsert(tableName)
 	if err != nil {
 		return err
@@ -142,7 +144,7 @@ func (p *populator) BatchInsert(ctx context.Context, tableName string, numberRec
 
 	numberRecordEachBatch := maxQuestionMarks / len(questionMarks)
 	if numberRecordEachBatch == 0 {
-		return fmt.Errorf("maxium question marks [%d]: %w", len(questionMarks), ErrMaximumQuestionMarks)
+		return fmt.Errorf("maximum question marks [%d]: %w", len(questionMarks), ErrMaximumQuestionMarks)
 	}
 
 	numberBatch := numberRecord/numberRecordEachBatch + 1
@@ -162,6 +164,7 @@ func (p *populator) BatchInsert(ctx context.Context, tableName string, numberRec
 			argsInsert = append(argsInsert, args...)
 		}
 
+		// INSERT INTO table_name (column1, column2, column3) VALUES (?, ?, ?), (?, ?, ?), (?, ?, ?);
 		queryInsert := fmt.Sprintf(stmtInsert,
 			tableName,
 			strings.Join(columnNames, ", "),
@@ -175,7 +178,7 @@ func (p *populator) BatchInsert(ctx context.Context, tableName string, numberRec
 		queryInsert, argsInsert := generateQueryArgsInsertFn(numberRecordEachBatch)
 
 		if p.verbose {
-			fmt.Println(i, queryInsert, argsInsert)
+			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", i, queryInsert, len(argsInsert))
 		}
 
 		if !p.dryRun {
@@ -190,7 +193,7 @@ func (p *populator) BatchInsert(ctx context.Context, tableName string, numberRec
 		queryInsert, argsInsert := generateQueryArgsInsertFn(numberRecordLastBatch)
 
 		if p.verbose {
-			fmt.Println(numberBatch-1, queryInsert, argsInsert)
+			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", numberBatch-1, queryInsert, len(argsInsert))
 		}
 
 		if !p.dryRun {

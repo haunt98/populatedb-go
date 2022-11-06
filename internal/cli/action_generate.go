@@ -20,8 +20,14 @@ func (a *action) RunGenerate(c *cli.Context) error {
 		return fmt.Errorf("populatedb: failed to new populator: %w", err)
 	}
 
-	if err := populator.Insert(c.Context, a.flags.table, a.flags.numberRecord); err != nil {
-		return fmt.Errorf("populatedb: failed to insert: %w", err)
+	if a.flags.batchMode {
+		if err := populator.InsertBatch(c.Context, a.flags.table, a.flags.numberRecord); err != nil {
+			return fmt.Errorf("populatedb: failed to batch: %w", err)
+		}
+	} else {
+		if err := populator.Insert(c.Context, a.flags.table, a.flags.numberRecord); err != nil {
+			return fmt.Errorf("populatedb: failed to insert: %w", err)
+		}
 	}
 
 	return nil

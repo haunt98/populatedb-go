@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v0.0.4 (2022-11-07)
+
+### Added
+
+- feat: add --batch to support batch mode (2022-11-07)
+
+- feat: support batch insert (wip) (2022-11-06)
+
+### Others
+
+- chore: add purpose in README (2022-11-07)
+
+- chore: explain number record each batch more clear (2022-11-07)
+
+- chore(changelog): generate v0.0.3 (2022-11-06)
+
 ## v0.0.3 (2022-11-06)
 
 ### Others

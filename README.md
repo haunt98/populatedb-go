@@ -1,5 +1,7 @@
 # populatedb
 
+Quickly populate database with fake data for testing only.
+
 Currently support:
 
 - mysql:

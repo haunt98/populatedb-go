@@ -119,7 +119,7 @@ func (p *populator) Insert(ctx context.Context, tableName string, numberRecord i
 		}
 
 		if p.verbose {
-			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", i, queryInsert, len(args))
+			fmt.Printf("Index: [%d]\n", i)
 		}
 
 		if !p.dryRun {
@@ -186,7 +186,7 @@ func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRec
 		queryInsert, argsInsert := generateQueryArgsInsertFn(numberRecordEachBatch)
 
 		if p.verbose {
-			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", i, queryInsert, len(argsInsert))
+			fmt.Printf("Index: [%d]\n", i)
 		}
 
 		if !p.dryRun {
@@ -201,7 +201,7 @@ func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRec
 		queryInsert, argsInsert := generateQueryArgsInsertFn(numberRecordLastBatch)
 
 		if p.verbose {
-			fmt.Printf("Index: [%d], Query: [%s], LenArgs: [%d]\n", numberBatch-1, queryInsert, len(argsInsert))
+			fmt.Printf("Index: [%d]\n", numberBatch-1)
 		}
 
 		if !p.dryRun {

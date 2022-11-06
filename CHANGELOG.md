@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.0.3 (2022-11-06)
+
+### Others
+
+- chore: fix build github action (2022-11-06)
+
+- chore: fix github action build (2022-11-06)
+
+- chore(changelog): generate v0.0.2 (2022-11-06)
+
 ## v0.0.2 (2022-11-06)
 
 ### Others

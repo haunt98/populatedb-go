@@ -2,7 +2,7 @@ before:
   hooks:
     - go mod tidy
 builds:
-  - main: cmd/populatedb
+  - main: ./cmd/populatedb
     goos:
       - linux
       - windows

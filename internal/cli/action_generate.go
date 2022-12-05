@@ -3,8 +3,9 @@ package cli
 import (
 	"fmt"
 
-	"github.com/haunt98/populatedb-go/internal/populatedb"
 	"github.com/urfave/cli/v2"
+
+	"github.com/haunt98/populatedb-go/internal/populatedb"
 )
 
 func (a *action) RunGenerate(c *cli.Context) error {

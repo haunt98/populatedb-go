@@ -215,15 +215,15 @@ func (p *populator) InsertBatch(ctx context.Context, tableName string, numberRec
 }
 
 // Return columnNames, questionMarks, argFns
-func (p *populator) prepareInsert(tableName string) ([]string, []string, []func() any, error) {
+func (p *populator) prepareInsert(tableName string) (columnNames, questionMarks []string, argFns []func() any, err error) {
 	table, ok := p.tables[tableName]
 	if !ok {
 		return nil, nil, nil, fmt.Errorf("table [%s] not exist: %w", tableName, ErrTableNotExist)
 	}
 
-	columnNames := make([]string, 0, len(table.Columns))
-	questionMarks := make([]string, 0, len(table.Columns))
-	argFns := make([]func() any, 0, len(table.Columns))
+	columnNames = make([]string, 0, len(table.Columns))
+	questionMarks = make([]string, 0, len(table.Columns))
+	argFns = make([]func() any, 0, len(table.Columns))
 	for _, column := range table.Columns {
 		dt, err := ParseDatabaseType(column)
 		if err != nil {

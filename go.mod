@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/brianvoe/gofakeit/v6 v6.20.2
 	github.com/go-sql-driver/mysql v1.7.0
-	github.com/k1LoW/tbls v1.64.0
+	github.com/k1LoW/tbls v1.64.1
 	github.com/make-go-great/color-go v0.4.1
 	github.com/urfave/cli/v2 v2.25.1
 )

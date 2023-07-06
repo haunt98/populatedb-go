@@ -4,9 +4,21 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "**.go"
+      - "go.mod"
+      - "go.sum"
   pull_request:
     branches:
       - main
+    paths:
+      - "**.go"
+      - "go.mod"
+      - "go.sum"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -14,11 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v4
         with:
-          go-version: "1.20"
-          check-latest: true
-          cache: true
+          go-version: "stable"
       - run: go test -race -failfast ./...
   build:
     name: Build
@@ -28,11 +38,9 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v4
         with:
-          go-version: "1.20"
-          check-latest: true
-          cache: true
+          go-version: "stable"
       - run: go build ./cmd/populatedb
   golangci-lint:
     name: golangci-lint
@@ -41,11 +49,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@v4
         with:
-          go-version: "1.20"
-          check-latest: true
-          cache: true
+          go-version: "stable"
       - uses: golangci/golangci-lint-action@v3
         with:
           version: latest

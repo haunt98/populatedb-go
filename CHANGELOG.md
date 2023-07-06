@@ -1,5 +1,63 @@
 # CHANGELOG
 
+## v0.0.6 (2023-07-06)
+
+### Others
+
+- chore: bump year (2023-07-06)
+
+- chore: sync golangci-lint (2023-07-06)
+
+- chore: sync github action (2023-07-06)
+
+- chore(deps): bump google.golang.org/grpc from 1.51.0 to 1.53.0 (2023-07-06)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.67.1 to 1.68.0 (2023-06-23)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.66.0 to 1.67.1 (2023-06-19)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.6 to 2.25.7 (2023-06-19)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.65.4 to 1.66.0 (2023-06-16)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.5 to 2.25.6 (2023-06-13)
+
+- chore(deps): bump github.com/snowflakedb/gosnowflake (2023-06-10)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.65.3 to 1.65.4 (2023-06-08)
+
+- chore(deps): bump github.com/brianvoe/gofakeit/v6 from 6.21.0 to 6.22.0 (2023-06-08)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.4 to 2.25.5 (2023-05-30)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.3 to 2.25.4 (2023-05-29)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.2 to 2.25.3 (2023-05-02)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.1 to 2.25.2 (2023-05-01)
+
+- chore(deps): bump github.com/go-sql-driver/mysql from 1.7.0 to 1.7.1 (2023-04-26)
+
+- chore(deps): bump github.com/brianvoe/gofakeit/v6 from 6.20.2 to 6.21.0 (2023-04-17)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.65.2 to 1.65.3 (2023-04-14)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.64.1 to 1.65.2 (2023-04-10)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.64.0 to 1.64.1 (2023-04-04)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.63.0 to 1.64.0 (2023-03-27)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.25.0 to 2.25.1 (2023-03-27)
+
+- chore(deps): bump github.com/k1LoW/tbls from 1.62.1 to 1.63.0 (2023-03-14)
+
+- chore(deps): bump github.com/brianvoe/gofakeit/v6 from 6.20.1 to 6.20.2 (2023-03-08)
+
+- chore(deps): bump github.com/urfave/cli/v2 from 2.24.4 to 2.25.0 (2023-03-06)
+
+- chore(changelog): generate v0.0.5 (2023-02-26)
+
 ## v0.0.5 (2023-02-26)
 
 ### Added

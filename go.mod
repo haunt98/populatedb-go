@@ -6,7 +6,7 @@ require (
 	github.com/brianvoe/gofakeit/v6 v6.23.0
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/k1LoW/tbls v1.68.1
-	github.com/make-go-great/color-go v0.4.1
+	github.com/make-go-great/color-go v0.5.0
 	github.com/urfave/cli/v2 v2.25.7
 )
 
@@ -52,7 +52,7 @@ require (
 	github.com/dvsekhvalnov/jose2go v1.5.0 // indirect
 	github.com/envoyproxy/go-control-plane v0.10.3 // indirect
 	github.com/envoyproxy/protoc-gen-validate v0.9.1 // indirect
-	github.com/fatih/color v1.13.0 // indirect
+	github.com/fatih/color v1.15.0 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.5+incompatible // indirect
 	github.com/gabriel-vasile/mimetype v1.4.1 // indirect
 	github.com/gertd/go-pluralize v0.2.1 // indirect
@@ -80,7 +80,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/lib/pq v1.10.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.16 // indirect
+	github.com/mattn/go-isatty v0.0.17 // indirect
 	github.com/minio/asm2plan9s v0.0.0-20200509001527-cdd76441f9d8 // indirect
 	github.com/minio/c2goasm v0.0.0-20190812172519-36a3d3bbc4f3 // indirect
 	github.com/minio/pkg v1.5.8 // indirect

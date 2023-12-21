@@ -7,7 +7,7 @@ toolchain go1.21.5
 require (
 	github.com/brianvoe/gofakeit/v6 v6.26.3
 	github.com/go-sql-driver/mysql v1.7.1
-	github.com/k1LoW/tbls v1.71.1
+	github.com/k1LoW/tbls v1.72.0
 	github.com/make-go-great/color-go v0.5.0
 	github.com/urfave/cli/v2 v2.26.0
 )

@@ -9,7 +9,7 @@ require (
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/k1LoW/tbls v1.72.0
 	github.com/make-go-great/color-go v0.5.0
-	github.com/urfave/cli/v2 v2.27.0
+	github.com/urfave/cli/v2 v2.27.1
 )
 
 require (

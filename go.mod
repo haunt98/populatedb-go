@@ -1,6 +1,7 @@
 module github.com/haunt98/populatedb-go
 
-go 1.21
+go 1.21.4
+
 toolchain go1.21.6
 
 require (

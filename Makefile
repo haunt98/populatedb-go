@@ -25,7 +25,6 @@ coverage-html: coverage
 	go tool cover -html=coverage.out
 
 lint:
-	go fix ./...
 	golangci-lint run ./...
 
 format:

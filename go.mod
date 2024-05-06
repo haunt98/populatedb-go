@@ -5,7 +5,7 @@ go 1.22.2
 require (
 	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/go-sql-driver/mysql v1.8.1
-	github.com/k1LoW/tbls v1.74.2
+	github.com/k1LoW/tbls v1.74.3
 	github.com/make-go-great/color-go v0.5.0
 	github.com/urfave/cli/v2 v2.27.2
 )
@@ -82,6 +82,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/k1LoW/duration v1.2.0 // indirect
 	github.com/k1LoW/expand v0.12.0 // indirect
+	github.com/k1LoW/ghfs v1.3.1 // indirect
 	github.com/k1LoW/go-github-client/v58 v58.0.12 // indirect
 	github.com/klauspost/compress v1.17.4 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
